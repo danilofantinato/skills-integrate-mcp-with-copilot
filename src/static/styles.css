@@ -16,7 +16,6 @@ body {
 }
 
 header {
-  text-align: center;
   padding: 20px 0;
   margin-bottom: 30px;
   background-color: #1a237e;
@@ -24,8 +23,69 @@ header {
   border-radius: 5px;
 }
 
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 0 20px;
+}
+
+.header-row h1,
+.header-row h2 {
+  text-align: left;
+}
+
 header h1 {
   margin-bottom: 10px;
+}
+
+.auth-status {
+  margin-top: 14px;
+  font-size: 14px;
+  opacity: 0.95;
+  padding: 0 20px;
+  text-align: left;
+}
+
+.user-menu-wrapper {
+  position: relative;
+}
+
+.user-icon-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background-color: white;
+  color: #1a237e;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.user-menu {
+  position: absolute;
+  right: 0;
+  top: 48px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  min-width: 130px;
+  z-index: 10;
+}
+
+.user-menu button {
+  width: 100%;
+  border-radius: 0;
+  background-color: white;
+  color: #1a237e;
+  text-align: left;
+  padding: 10px;
+}
+
+.user-menu button:hover {
+  background-color: #f0f2ff;
 }
 
 main {
@@ -197,4 +257,46 @@ footer {
   margin-top: 30px;
   padding: 20px;
   color: #666;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 420px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.secondary-btn {
+  background-color: #757575;
+}
+
+.secondary-btn:hover {
+  background-color: #616161;
+}
+
+@media (max-width: 768px) {
+  .header-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .user-menu-wrapper {
+    align-self: flex-end;
+  }
 }
